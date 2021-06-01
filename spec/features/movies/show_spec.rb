@@ -5,6 +5,7 @@ RSpec.describe 'movies show page', type: :feature do
   end
 
   describe 'page appearance' do
+    
   end
 
   describe 'page functionality' do

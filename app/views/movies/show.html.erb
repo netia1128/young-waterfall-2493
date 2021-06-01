@@ -1,0 +1,20 @@
+<div class="container" style='padding-left: 20px; padding-bottom: 20px;'>
+<h1><%= "#{@movie.title}" %></h1>
+
+<table style='width: 25%'>
+  <tr>
+    <td>Year</td>
+    <td><%= @movie.creation_year %>
+  </tr>
+    <tr>
+    <td>Genre</td>
+    <td><%= @movie.genre %>
+  </tr>
+  <tr>
+    <td>Actors</td>
+    <td><ul><% @actors.each do |actor| %>
+      <li><%= actor.name %></li>
+    <% end %>
+    </ul></td>
+  </tr>
+</table><br>
