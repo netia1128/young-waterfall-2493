@@ -1,0 +1,20 @@
+<div class="container" style='padding-left: 20px; padding-bottom: 20px;'>
+<h1><%= "Studio #{@studio.id}" %></h1>
+
+<table style='width: 25%'>
+  <tr>
+    <td>Name</td>
+    <td><%= @studio.name %>
+  </tr>
+    <tr>
+    <td>Location</td>
+    <td><%= @studio.location %>
+  </tr>
+    <tr>
+    <td>Movies</td>
+    <td><ul><% @movies.each do |movie| %>
+      <li><%= movie.title %></li>
+    <% end %>
+    </ul></td>
+  </tr>
+</table><br>
