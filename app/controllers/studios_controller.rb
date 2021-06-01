@@ -27,6 +27,7 @@ class StudiosController < ApplicationController
   def show
   @studio = Studio.find(params[:id])
   @movies = @studio.movies
+  @actors = @studio.actors_formatted
   end
 
   def update
