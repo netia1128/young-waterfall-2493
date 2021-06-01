@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   resources :movies
   resources :actors
   resources :studios
+
+
+  get '/movies/:movie_id/actors/new', to: 'actors#new'
 end
