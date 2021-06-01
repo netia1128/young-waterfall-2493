@@ -13,17 +13,4 @@ RSpec.describe Actor do
     it {should have_many :actor_movies}
     it {should have_many(:movies).through(:actor_movies)}
   end
-
-  describe 'class methods' do
-    describe '#order_by_age' do
-      it 'should order all actors by age, oldest to youngest' do
-        expect(Actor.order_by_age).to eq([@actor2, @actor1, @actor4, @actor3, @actor5])
-      end
-    end
-    describe '#currently_working' do
-      it 'should return only actors that are currently working' do
-        expect(Actor.currently_working).to eq([@actor1, @actor3, @actor5])
-      end
-    end
-  end
 end
