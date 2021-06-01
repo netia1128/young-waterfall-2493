@@ -25,8 +25,12 @@ class MoviesController < ApplicationController
   end
 
   def show
-  @movie = Movie.find(params[:id])
-  @actors = @movie.actors
+    @movie = Movie.find(params[:id])
+    if !params[:search_actor].nil?
+      new_actor = Actor.find_by_name(params[:search_actor])
+      ActorMovie.create!(movie: @movie, actor: new_actor)
+    end
+    @actors = @movie.actors
   end
 
   def update

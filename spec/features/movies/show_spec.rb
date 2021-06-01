@@ -42,9 +42,11 @@ RSpec.describe 'movies show page', type: :feature do
       expect(page).to have_content("Search actor by name")
       expect(page).to have_button("Add Actor")
 
-      click_link 'Add Actor'
+      fill_in 'search_actor', with: 'Luke Skywalker'
+      click_button('Add Actor')
 
-      expect(current_path).to eq("/movies/#{@movie2.id}/actors/new")
+      expect(current_path).to eq("/movies/#{@movie2.id}")
+      expect(page).to have_content("Luke Skywalker")
     end
   end
 

@@ -13,4 +13,10 @@ RSpec.describe Actor do
     it {should have_many :actor_movies}
     it {should have_many(:movies).through(:actor_movies)}
   end
+
+  describe 'class methods' do
+    it 'allows you to find an actor by name' do
+      expect(Actor.find_by_name('Luke Skywalker')).to eq(@actor1)
+    end
+  end
 end
