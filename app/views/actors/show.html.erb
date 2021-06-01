@@ -1,0 +1,16 @@
+<h1><%= "#{@actor.name}" %></h1>
+
+
+<table style='width: 25%'>
+  <tr>
+    <td>Age</td>
+    <td><%= @actor.age %>
+  </tr>
+    <tr>
+    <td>Actors Worked With</td>
+    <td><ul><% @coactors.each do |coactor| %>
+      <li><%= coactor.name %></li>
+    <% end %>
+    </ul></td>
+  </tr>
+</table><br>

@@ -25,7 +25,8 @@ class ActorsController < ApplicationController
   end
 
   def show
-  @actor = Actor.find(params[:id])
+    @actor = Actor.find(params[:id])
+    @coactors = @actor.coactors
   end
 
   def update
