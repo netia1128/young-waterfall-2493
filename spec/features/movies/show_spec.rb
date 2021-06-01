@@ -38,7 +38,9 @@ RSpec.describe 'movies show page', type: :feature do
     it 'has a button that lets you add a new actor' do
       visit "/movies/#{@movie2.id}"
 
-      expect(page).to have_link("Add Actor")
+      expect(page).to have_content("Add Actor")
+      expect(page).to have_content("Search actor by name")
+      expect(page).to have_button("Add Actor")
 
       click_link 'Add Actor'
 

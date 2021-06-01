@@ -19,4 +19,9 @@
   </tr>
 </table><br>
 
-<button><%= link_to "Add Actor", "/movies/#{@movie.id}/actors/new", method: :get %></button>
+<h3>Add Actor</h3>
+  <%= form_with url: request.path, method: :get, local: true do |f| %>
+    <%= f.label "Search Actor By Name" %>
+    <%= f.text_field :search %>
+    <%= f.submit "Add Actor" %>
+  <% end %>
